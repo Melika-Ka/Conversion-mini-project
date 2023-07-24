@@ -1,25 +1,23 @@
-let convertButton = document.querySelector(".convertButton");
-let resetButton = document.querySelector(".resetButton");
-let changeButton = document.querySelector(".changeButton");
-let result = document.querySelector(".result");
-let converterInput = document.querySelector("#converter");
-let isTempC = true;
-convertButton.addEventListener("click", converting);
+let imgSlider = document.querySelector('img')
+let prevBtn = document.querySelector('.prev')
+let nextBtn = document.querySelector('.next')
+let imgArr = ['image/1.jpg', 'image/2.png', 'image/3.jpg']
+let imgIndex = 0;
 
-function converting() {
-  if (isTempC) {
-    convertCtoF();
-  } else {
-    convertFtoC();
+prevBtn.addEventListener('click', function(){
+    imgIndex--;
+    if(imgIndex < 0){
+      imgIndex = imgArr.length - 1
+    }
+    imgSlider.setAttribute('src', imgArr[imgIndex])
+})
+
+
+nextBtn.addEventListener('click', function(){
+  imgIndex++;
+  if(imgIndex > imgArr.length - 1){
+    imgIndex = 0
   }
-}
-function convertCtoF() {
-  let convert = +converterInput.value * 1.8 + 32;
-  result.innerHTML = +converterInput.value + "°C" + " is: " + convert + "°F";
-  converterInput.value = "";
-}
-function convertFtoC() {
-  let convert = (+input.value - 32) / 1.8;
-  result.innerHTML = +converterInput.value + "°C" + " is: " + convert + "°F";
-  converterInput.value = "";
-}
+  imgSlider.setAttribute('src', imgArr[imgIndex])
+})
+
