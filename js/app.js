@@ -3,6 +3,7 @@ let resetButton = document.querySelector(".resetButton");
 let changeButton = document.querySelector(".changeButton");
 let result = document.querySelector(".result");
 let converterInput = document.querySelector("#converter");
+
 let label = document.querySelector("header label");
 let isTempC = true;
 convertButton.addEventListener("click", converting);
@@ -15,7 +16,6 @@ function validate() {
     converterInput.value = "";
   }
 }
-
 function reset() {
   converterInput.value = "";
   result.innerHTML = "";
@@ -39,6 +39,17 @@ function convertCtoF() {
 }
 function convertFtoC() {
   let convert = Math.round((+converterInput.value - 32) / 1.8);
+
   result.innerHTML = +converterInput.value + "°F" + " is: " + convert + "°C";
   converterInput.value = "";
+}
+
+function changing() {
+  isTempC = !isTempC;
+  if (isTempC) {
+    label.innerHTML = `  Converter °C to °F`;
+  } else {
+    label.innerHTML = ` Converter °F to °C`;
+    converterInput.setAttribute("placeholder", "°F");
+  }
 }
