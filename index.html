@@ -1,45 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Converter Celsius to Fahrenheit" />
-    <meta
-      name="keywords"
-      content="converter, calculator, celsius, fahrenheit"
-    />
-    <meta name="author" />
-    <title>°C to °F</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>تبدیل فارن هایت به سانتی گراد</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="head">تبدیل فارن هایت به سانتی گراد</h1>
+        <input type="text" id="fahrenheit" name="f" placeholder="فارن هایت" value=""/>
+        <input type="text" id="centigrade" name="c" placeholder="سانتی گراد" value=""/>
+        <div id="result">
+        </div>
+        <button id="convert">تبدیل</button>
+        <button id="reset">بازنشانی</button>
+        <button id="change">عوض کردن</button>
 
-    <link href="style/style.css" rel="stylesheet" />
-
-    <link rel="preconcert" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="icon" href="img/thermometer.png" type="image/png" />
-
-    <script src="js/app.js" defer></script>
-  </head>
-
-  <body>
-    <header>
-      <label for="converter">Converter °C to °F</label>
-    </header>
-
-    <div>
-      <input type="text" id="converter" placeholder="°C" />
     </div>
-
-    <p class="result"></p>
-
-    <div id="buttons">
-      <button class="convertButton">Convert</button>
-      <button class="resetButton">Reset</button>
-      <button class="changeButton">Change</button>
-    </div>
-  </body>
+    <script src="./js/script.js"></script>
+</body>
 </html>
